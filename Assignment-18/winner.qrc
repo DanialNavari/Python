@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="img">
+    <file>winner.jpg</file>
+  </qresource>
+</RCC>
