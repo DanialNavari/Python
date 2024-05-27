@@ -26,8 +26,11 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.menu_new.triggered.connect(self.new_game)
+        self.ui.menu_new.triggered.connect(partial(self.new_game, 0.5))
         self.ui.menu_open.triggered.connect(self.open_file)
+        self.ui.actionSolve.triggered.connect(self.solve)
+        self.ui.actionDark.triggered.connect(partial(self.mode, "dark"))
+        self.ui.actionLight.triggered.connect(partial(self.mode, "light"))
         self.ui.actionVery_Easy.triggered.connect(partial(self.set_level, 0.1))
         self.ui.actionEasy.triggered.connect(partial(self.set_level, 0.3))
         self.ui.actionNormal.triggered.connect(partial(self.set_level, 0.5))
@@ -45,14 +48,14 @@ class MainWindow(QMainWindow):
             self.check_win()
 
     def new_game(self, lvl=0.5):
-        puzzle = Sudoku(3, seed=random.randint(1, 1000)).difficulty(lvl)
+        self.puzzle = Sudoku(3, seed=random.randint(1, 1000)).difficulty(lvl)
         self.line_edits = [[None for i in range(9)] for j in range(9)]
         for i in range(9):
             for j in range(9):
                 new_cell = QLineEdit()
                 new_cell.setReadOnly(False)
-                if puzzle.board[i][j] != None:
-                    new_cell.setText(str(puzzle.board[i][j]))
+                if self.puzzle.board[i][j] != None:
+                    new_cell.setText(str(self.puzzle.board[i][j]))
                     new_cell.setReadOnly(True)
 
                 new_cell.setFixedWidth(50)
@@ -71,19 +74,19 @@ class MainWindow(QMainWindow):
         f = open(file_path[0], "r")
         big_text = f.read()
         rows = big_text.split("\n")
-        puzzle_board = [[None for i in range(9)] for j in range(9)]
+        self.puzzle_board = [[None for i in range(9)] for j in range(9)]
 
         for i in range(len(rows)):
             cells = rows[i].split(" ")
             for j in range(len(cells)):
-                puzzle_board[i][j] = int(cells[j])
+                self.puzzle_board[i][j] = int(cells[j])
 
         for i in range(9):
             for j in range(9):
                 new_cell = QLineEdit()
                 new_cell.setReadOnly(False)
-                if puzzle_board[i][j] != 0:
-                    new_cell.setText(str(puzzle_board[i][j]))
+                if self.puzzle_board[i][j] != 0:
+                    new_cell.setText(str(self.puzzle_board[i][j]))
                     new_cell.setReadOnly(True)
                 new_cell.setFixedWidth(50)
                 new_cell.setFixedHeight(50)
@@ -299,6 +302,59 @@ class MainWindow(QMainWindow):
 
     def set_level(self, level):
         self.new_game(level)
+
+    def solve(self):
+        solver = Sudoku.solve(self.puzzle)
+        self.line_edits = [[None for i in range(9)] for j in range(9)]
+        for i in range(9):
+            for j in range(9):
+                new_cell = QLineEdit()
+                new_cell.setReadOnly(False)
+                if solver.board[i][j] != None:
+                    new_cell.setText(str(solver.board[i][j]))
+                    new_cell.setReadOnly(True)
+
+                new_cell.setFixedWidth(50)
+                new_cell.setFixedHeight(50)
+                new_cell.setAlignment(Qt.AlignVCenter)
+                new_cell.setAlignment(Qt.AlignHCenter)
+                new_cell.setStyleSheet(
+                    "font-size:25px;font-weight:bold;border-radius:5px"
+                )
+                self.ui.grid_layout.addWidget(new_cell, i, j)
+                self.line_edits[i][j] = new_cell
+
+    def mode(self, pos):
+        if pos == "dark":
+            self.ui.centralwidget.setStyleSheet("background-color:gray")
+            for i in range(0, 9):
+                for j in range(0, 9):
+                    self.line_edits[i][j].setFixedWidth(50)
+                    self.line_edits[i][j].setFixedHeight(50)
+                    self.line_edits[i][j].setAlignment(Qt.AlignVCenter)
+                    self.line_edits[i][j].setAlignment(Qt.AlignHCenter)
+                    self.line_edits[i][j].setStyleSheet(
+                        "font-size:25px;font-weight:bold;border-radius:5px;background-color:#000;color:#fff"
+                    )
+                    self.ui.line.setStyleSheet("background-color: rgb(255, 255, 255)")
+                    self.ui.line_4.setStyleSheet("background-color: rgb(255, 255, 255)")
+                    self.ui.line_3.setStyleSheet("background-color: rgb(255, 255, 255)")
+                    self.ui.line_2.setStyleSheet("background-color: rgb(255, 255, 255)")
+        elif pos == "light":
+            self.ui.centralwidget.setStyleSheet("background-color:rgb(240,240,240)")
+            for i in range(0, 9):
+                for j in range(0, 9):
+                    self.line_edits[i][j].setFixedWidth(50)
+                    self.line_edits[i][j].setFixedHeight(50)
+                    self.line_edits[i][j].setAlignment(Qt.AlignVCenter)
+                    self.line_edits[i][j].setAlignment(Qt.AlignHCenter)
+                    self.line_edits[i][j].setStyleSheet(
+                        "font-size:25px;font-weight:bold;border-radius:5px;background-color:#fff;color:#000"
+                    )
+                    self.ui.line.setStyleSheet("background-color: rgb(240, 240, 240)")
+                    self.ui.line_4.setStyleSheet("background-color: rgb(240, 240, 240)")
+                    self.ui.line_3.setStyleSheet("background-color: rgb(240, 240, 240)")
+                    self.ui.line_2.setStyleSheet("background-color: rgb(240, 240, 240)")
 
 
 if __name__ == "__main__":

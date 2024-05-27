@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>780</width>
-    <height>555</height>
+    <height>554</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>780</width>
-    <height>555</height>
+    <height>554</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>780</width>
-    <height>555</height>
+    <height>554</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -56,10 +56,13 @@
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>0</y>
+      <y>10</y>
       <width>16</width>
       <height>541</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
     </property>
     <property name="orientation">
      <enum>Qt::Vertical</enum>
@@ -69,7 +72,7 @@
     <property name="geometry">
      <rect>
       <x>500</x>
-      <y>0</y>
+      <y>10</y>
       <width>16</width>
       <height>541</height>
      </rect>
@@ -93,6 +96,11 @@
      </property>
     </layout>
    </widget>
+   <zorder>gridLayoutWidget</zorder>
+   <zorder>line</zorder>
+   <zorder>line_2</zorder>
+   <zorder>line_3</zorder>
+   <zorder>line_4</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -117,10 +125,19 @@
      <addaction name="actionHard"/>
      <addaction name="actionVery_Hard"/>
     </widget>
+    <widget class="QMenu" name="menuDarkMode">
+     <property name="title">
+      <string>Light Mode</string>
+     </property>
+     <addaction name="actionDark"/>
+     <addaction name="actionLight"/>
+    </widget>
     <addaction name="menu_new"/>
     <addaction name="separator"/>
     <addaction name="menu_open"/>
     <addaction name="menuDifficulty"/>
+    <addaction name="actionSolve"/>
+    <addaction name="menuDarkMode"/>
    </widget>
    <addaction name="menuGame"/>
   </widget>
@@ -157,6 +174,21 @@
   <action name="actionVery_Hard">
    <property name="text">
     <string>Very Hard</string>
+   </property>
+  </action>
+  <action name="actionSolve">
+   <property name="text">
+    <string>Solve</string>
+   </property>
+  </action>
+  <action name="actionDark">
+   <property name="text">
+    <string>Dark</string>
+   </property>
+  </action>
+  <action name="actionLight">
+   <property name="text">
+    <string>Light</string>
    </property>
   </action>
  </widget>
