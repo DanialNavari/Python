@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="bg">
+    <file>win.jpg</file>
+  </qresource>
+</RCC>

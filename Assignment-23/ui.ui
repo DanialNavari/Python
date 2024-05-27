@@ -107,9 +107,20 @@
     <property name="title">
      <string>Game</string>
     </property>
+    <widget class="QMenu" name="menuDifficulty">
+     <property name="title">
+      <string>Difficulty</string>
+     </property>
+     <addaction name="actionVery_Easy"/>
+     <addaction name="actionEasy"/>
+     <addaction name="actionNormal"/>
+     <addaction name="actionHard"/>
+     <addaction name="actionVery_Hard"/>
+    </widget>
     <addaction name="menu_new"/>
     <addaction name="separator"/>
     <addaction name="menu_open"/>
+    <addaction name="menuDifficulty"/>
    </widget>
    <addaction name="menuGame"/>
   </widget>
@@ -121,6 +132,31 @@
   <action name="menu_open">
    <property name="text">
     <string>Open File</string>
+   </property>
+  </action>
+  <action name="actionVery_Easy">
+   <property name="text">
+    <string>Very Easy</string>
+   </property>
+  </action>
+  <action name="actionEasy">
+   <property name="text">
+    <string>Easy</string>
+   </property>
+  </action>
+  <action name="actionNormal">
+   <property name="text">
+    <string>Normal</string>
+   </property>
+  </action>
+  <action name="actionHard">
+   <property name="text">
+    <string>Hard</string>
+   </property>
+  </action>
+  <action name="actionVery_Hard">
+   <property name="text">
+    <string>Very Hard</string>
    </property>
   </action>
  </widget>

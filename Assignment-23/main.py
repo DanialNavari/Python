@@ -5,6 +5,20 @@ from functools import partial
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from main_ui import Ui_MainWindow
+from winner_ui import Ui_Winner
+
+
+class WinnerWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.winner_ui = Ui_Winner()
+        self.winner_ui.setupUi(self)
+        self.winner_ui.restart_btn.clicked.connect(self.restart_game)
+
+    def restart_game(self):
+        window.new_game()
+        window.show()
+        winner_form.hide()
 
 
 class MainWindow(QMainWindow):
@@ -14,7 +28,13 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.ui.menu_new.triggered.connect(self.new_game)
         self.ui.menu_open.triggered.connect(self.open_file)
+        self.ui.actionVery_Easy.triggered.connect(partial(self.set_level, 0.1))
+        self.ui.actionEasy.triggered.connect(partial(self.set_level, 0.3))
+        self.ui.actionNormal.triggered.connect(partial(self.set_level, 0.5))
+        self.ui.actionHard.triggered.connect(partial(self.set_level, 0.7))
+        self.ui.actionVery_Hard.triggered.connect(partial(self.set_level, 0.9))
         self.new_game()
+        self.answer = True
 
     def validation(self, i, j, text):
         self.reset_to_defult()
@@ -22,9 +42,10 @@ class MainWindow(QMainWindow):
             self.line_edits[i][j].setText("")
         if text != None and text != "":
             self.check(i, j)
+            self.check_win()
 
-    def new_game(self):
-        puzzle = Sudoku(3, seed=random.randint(1, 1000)).difficulty(0.5)
+    def new_game(self, lvl=0.5):
+        puzzle = Sudoku(3, seed=random.randint(1, 1000)).difficulty(lvl)
         self.line_edits = [[None for i in range(9)] for j in range(9)]
         for i in range(9):
             for j in range(9):
@@ -85,7 +106,9 @@ class MainWindow(QMainWindow):
                     self.line_edits[i][jj].setStyleSheet(
                         "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffaaff;color:#000"
                     )
-                    print("Row Error!!")
+                    self.answer = False
+                else:
+                    self.answer = True
 
         # check col
         for ii in range(0, 9):
@@ -95,12 +118,12 @@ class MainWindow(QMainWindow):
                     self.line_edits[ii][j].setStyleSheet(
                         "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffaaff;color:#000"
                     )
-                    print("Col Error!!")
+                    self.answer = False
+                else:
+                    self.answer = True
 
         # check square
-        answer = self.check_all_squares(i, j, user_number)
-        if answer == False:
-            print("Square Error!!")
+        self.check_all_squares(i, j, user_number)
 
     def check_all_squares(self, ii, jj, user_number):
         answer = True
@@ -119,6 +142,7 @@ class MainWindow(QMainWindow):
                         self.line_edits[i][j].setStyleSheet(
                             "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffffff;color:#000"
                         )
+                        answer = True
 
         # 2nd square
         if ii >= 0 and ii < 3 and jj >= 3 and jj < 6:
@@ -134,6 +158,7 @@ class MainWindow(QMainWindow):
                         self.line_edits[i][j].setStyleSheet(
                             "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffffff;color:#000"
                         )
+                        answer = True
 
         # 3rd square
         if ii >= 0 and ii < 3 and jj >= 6 and jj < 9:
@@ -149,6 +174,7 @@ class MainWindow(QMainWindow):
                         self.line_edits[i][j].setStyleSheet(
                             "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffffff;color:#000"
                         )
+                        answer = True
 
         # -------------------------------------------------------------------
         # second three row
@@ -166,6 +192,7 @@ class MainWindow(QMainWindow):
                         self.line_edits[i][j].setStyleSheet(
                             "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffffff;color:#000"
                         )
+                        answer = True
 
         # 2nd square
         if ii >= 3 and ii < 6 and jj >= 3 and jj < 6:
@@ -181,6 +208,7 @@ class MainWindow(QMainWindow):
                         self.line_edits[i][j].setStyleSheet(
                             "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffffff;color:#000"
                         )
+                        answer = True
 
         # 3rd square
         if ii >= 3 and ii < 6 and jj >= 6 and jj < 9:
@@ -196,6 +224,7 @@ class MainWindow(QMainWindow):
                         self.line_edits[i][j].setStyleSheet(
                             "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffffff;color:#000"
                         )
+                        answer = True
 
         # -------------------------------------------------------------------
         # third three row
@@ -213,6 +242,7 @@ class MainWindow(QMainWindow):
                         self.line_edits[i][j].setStyleSheet(
                             "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffffff;color:#000"
                         )
+                        answer = True
 
         # 2nd square
         if ii >= 6 and ii < 9 and jj >= 3 and jj < 6:
@@ -228,6 +258,7 @@ class MainWindow(QMainWindow):
                         self.line_edits[i][j].setStyleSheet(
                             "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffffff;color:#000"
                         )
+                        answer = True
 
         # 3rd square
         if ii >= 6 and ii < 9 and jj >= 6 and jj < 9:
@@ -243,8 +274,9 @@ class MainWindow(QMainWindow):
                         self.line_edits[i][j].setStyleSheet(
                             "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffffff;color:#000"
                         )
+                        answer = True
 
-        return answer
+        self.answer = answer
 
     def reset_to_defult(self):
         for i in range(0, 9):
@@ -253,9 +285,25 @@ class MainWindow(QMainWindow):
                     "font-size:25px;font-weight:bold;border-radius:5px;background-color:#ffffff;color:#000"
                 )
 
+    def check_win(self):
+        pos = 0
+        for i in range(0, 9):
+            for j in range(0, 9):
+                txt = self.line_edits[i][j].text()
+                if txt == None or txt == "":
+                    pos += 1
+
+        if pos == 0 and self.answer == True:
+            window.hide()
+            winner_form.show()
+
+    def set_level(self, level):
+        self.new_game(level)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
+    winner_form = WinnerWindow()
     window.show()
     app.exec()
