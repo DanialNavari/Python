@@ -17,3 +17,11 @@
 ### Sudoku screen
 
 ## ![TODOLIST](./sudoku.png)
+
+### Sudoku screen mode
+
+## ![TODOLIST](./sudoku_mode.png)
+
+### Sudoku solve option
+
+## ![TODOLIST](./sudoku_solve.png)
