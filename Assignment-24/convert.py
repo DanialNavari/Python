@@ -22,10 +22,8 @@ audio_list = []
 
 # Download video from a url address and write into a file
 def download(url, name):
-    path = "/videos/" + name + ".mp4"
-    # file = urllib.request.urlopen(url)
-    file = requests.get(url=url)
-    f = open(path, "wb")
+    file = requests.get(url)
+    f = open(f"{name}.mp4", "wb")
     f.write(file.content)
     f.close()
 
@@ -66,7 +64,7 @@ def convert_with_threat():
     print(f"\n Duration using Threat: {round(end_time - start_time,2)} seconds.\n")
 
 
-for i in range(1, 6):
+for i in range(0, 5):
     download(video_list[i], i)
 
 
