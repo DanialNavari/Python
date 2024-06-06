@@ -1,7 +1,7 @@
 import time
 from threading import Thread
 import requests
-from moviepy import editor
+from pip import editor
 
 # Threads list
 threads = []
