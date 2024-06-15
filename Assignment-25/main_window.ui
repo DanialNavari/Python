@@ -40,7 +40,7 @@
      <attribute name="title">
       <string>Stop Watch</string>
      </attribute>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="lbl_stopwatch">
       <property name="geometry">
        <rect>
         <x>270</x>
@@ -65,8 +65,8 @@
      <widget class="QPushButton" name="btn_start_stopwatch">
       <property name="geometry">
        <rect>
-        <x>194</x>
-        <y>240</y>
+        <x>150</x>
+        <y>210</y>
         <width>91</width>
         <height>41</height>
        </rect>
@@ -84,8 +84,8 @@
      <widget class="QPushButton" name="btn_stop_stopwatch">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>240</y>
+        <x>256</x>
+        <y>210</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -98,6 +98,25 @@
       </property>
       <property name="text">
        <string>Stop</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_reset_stopwatch">
+      <property name="geometry">
+       <rect>
+        <x>376</x>
+        <y>210</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Reset</string>
       </property>
      </widget>
     </widget>
