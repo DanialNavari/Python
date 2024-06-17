@@ -59,11 +59,12 @@ tb_second = 30
 
 
 # Show number of timer
-def show_timer_timer(time):
+def show_timer_timer(time, pos):
     window.ui.tb_hour_timer.setText(f"{time.hour}")
     window.ui.tb_minute_timer.setText(f"{time.minute}")
     window.ui.tb_second_timer.setText(f"{time.second}")
-
+    if pos == False:
+        stop_timer()
 
 # Start the thread of timer
 def start_timer():

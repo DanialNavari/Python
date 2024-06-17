@@ -21,10 +21,16 @@ class MyTime:
             if self.minute > 0:
                 self.minute -= 1
                 self.second += 59
+                return True
             elif self.hour > 0 and self.minute <= 0:
                 self.hour -= 1
                 self.minute = 59
                 self.second = 59
+                return True
+            elif self.hour <= 0 and self.minute <= 0 and self.second <= 0:
+                return False
+        else:
+            return True
 
     # For timer section
     def reset_timer(self, hh, mm, ss):
