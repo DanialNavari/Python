@@ -102,14 +102,21 @@ window.ui.btn_reset_timer.clicked.connect(reset_timer)
 
 ########################## End of timer ##########################
 
+
 ##########################  Start of Global Time ##########################
-def show_global_time(ir_time, us_time, de_time):
+def show_global_time(ir_time, us_time, de_time, ir_zone, us_zone, de_zone):
     window.ui.ir_time.setText(ir_time)
     window.ui.usa_time.setText(us_time)
     window.ui.de_time.setText(de_time)
+    window.ui.ir_timezone.setText(ir_zone)
+    window.ui.us_timezone.setText(us_zone)
+    window.ui.de_timezone.setText(de_zone)
+    print(ir_time)
+
 
 global_country_time = GlobalTime()
 global_country_time.signal_show_country.connect(show_global_time)
+global_country_time.start()
 
 
 ##########################  End of Global Time ##########################
