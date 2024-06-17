@@ -9,6 +9,7 @@ from PySide6.QtWidgets import *
 from Ui import *
 from stopwatch import *
 from timer import *
+from global_time import GlobalTime
 
 
 # Make app
@@ -100,6 +101,18 @@ window.ui.btn_stop_timer.clicked.connect(stop_timer)
 window.ui.btn_reset_timer.clicked.connect(reset_timer)
 
 ########################## End of timer ##########################
+
+##########################  Start of Global Time ##########################
+def show_global_time(ir_time, us_time, de_time):
+    window.ui.ir_time.setText(ir_time)
+    window.ui.usa_time.setText(us_time)
+    window.ui.de_time.setText(de_time)
+
+global_country_time = GlobalTime()
+global_country_time.signal_show_country.connect(show_global_time)
+
+
+##########################  End of Global Time ##########################
 
 # Application execute
 app.exec()

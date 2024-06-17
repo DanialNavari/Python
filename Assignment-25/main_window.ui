@@ -156,7 +156,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="ir_time_2">
+     <widget class="QLabel" name="ir_timezone">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -175,13 +175,13 @@
        <string notr="true">color: rgb(255, 0, 127);</string>
       </property>
       <property name="text">
-       <string>+4:30</string>
+       <string>0</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="ir_time_3">
+     <widget class="QLabel" name="de_timezone">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -200,13 +200,13 @@
        <string notr="true">color: rgb(255, 0, 127);</string>
       </property>
       <property name="text">
-       <string>+2:00</string>
+       <string>0</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="ir_time_4">
+     <widget class="QLabel" name="us_timezone">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -225,7 +225,7 @@
        <string notr="true">color: rgb(255, 0, 127);</string>
       </property>
       <property name="text">
-       <string>-4:00</string>
+       <string>0</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
