@@ -36,7 +36,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -112,7 +112,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="usa_time">
+     <widget class="QLabel" name="de_time">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -134,7 +134,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="de_time">
+     <widget class="QLabel" name="us_time">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -263,8 +263,8 @@
      <widget class="QPushButton" name="btn_stop_stopwatch">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>240</y>
+        <x>300</x>
+        <y>170</y>
         <width>121</width>
         <height>61</height>
        </rect>
@@ -282,9 +282,9 @@
      <widget class="QPushButton" name="btn_reset_stopwatch">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>170</y>
-        <width>121</width>
+        <x>170</x>
+        <y>240</y>
+        <width>251</width>
         <height>61</height>
        </rect>
       </property>
@@ -329,9 +329,9 @@
      <widget class="QPushButton" name="btn_reset_timer">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>180</y>
-        <width>131</width>
+        <x>160</x>
+        <y>250</y>
+        <width>271</width>
         <height>61</height>
        </rect>
       </property>
@@ -367,8 +367,8 @@
      <widget class="QPushButton" name="btn_stop_timer">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>250</y>
+        <x>300</x>
+        <y>180</y>
         <width>131</width>
         <height>61</height>
        </rect>
@@ -492,6 +492,9 @@ background-color: rgb(240, 240, 240);</string>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QLineEdit" name="tb_hour_timer_3">
       <property name="geometry">
@@ -517,6 +520,9 @@ background-color: rgb(240, 240, 240);</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
