@@ -4,6 +4,7 @@ import sys
 # Qt library
 from PySide6.QtCore import QObject, QThread, Signal
 from PySide6.QtWidgets import *
+import arcade
 
 # Program file
 from Ui import *
@@ -59,12 +60,21 @@ tb_second = 30
 
 
 # Show number of timer
-def show_timer_timer(time, pos):
-    window.ui.tb_hour_timer.setText(f"{time.hour}")
-    window.ui.tb_minute_timer.setText(f"{time.minute}")
-    window.ui.tb_second_timer.setText(f"{time.second}")
+def show_timer_timer(times, pos):
+    window.ui.tb_hour_timer.setText(f"{times.hour}")
+    window.ui.tb_minute_timer.setText(f"{times.minute}")
+    window.ui.tb_second_timer.setText(f"{times.second}")
     if pos == False:
+        gameover_sound = arcade.load_sound("sound/alarm.wav", False)
+        music = arcade.play_sound(sound=gameover_sound, volume=1, pan=0, looping=True)
+
+        msgbox = QMessageBox()
+        msgbox.setText("زمان به پایان رسید")
+        ret = msgbox.exec()
+        if ret == 1024:
+            arcade.stop_sound(music)
         stop_timer()
+
 
 # Start the thread of timer
 def start_timer():
