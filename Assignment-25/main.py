@@ -11,6 +11,7 @@ from Ui import *
 from stopwatch import *
 from timer import *
 from global_time import GlobalTime
+from alarm import Winalarm
 
 
 # Make app

@@ -35,12 +35,25 @@
       <height>391</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>IRANYekanX Bold</family>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="currentIndex">
      <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
      <attribute name="title">
-      <string>World Clock</string>
+      <string>ساعت جهانی</string>
      </attribute>
      <widget class="QLabel" name="label">
       <property name="geometry">
@@ -101,8 +114,10 @@
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>28</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="text">
@@ -123,8 +138,10 @@
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>28</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="text">
@@ -145,8 +162,10 @@
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>28</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="text">
@@ -167,8 +186,10 @@
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -192,8 +213,10 @@
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -217,8 +240,10 @@
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -234,12 +259,36 @@
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>Alarm</string>
+      <string>هشدار</string>
      </attribute>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>300</y>
+        <width>591</width>
+        <height>58</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="add_alarm">
+         <property name="font">
+          <font>
+           <pointsize>22</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>+</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
-      <string>Stop Watch</string>
+      <string>کرنومتر</string>
      </attribute>
      <widget class="QPushButton" name="btn_start_stopwatch">
       <property name="geometry">
@@ -252,12 +301,14 @@
       </property>
       <property name="font">
        <font>
+        <family>IRANYekanX Bold</family>
         <pointsize>20</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>Start</string>
+       <string>شروع</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_stop_stopwatch">
@@ -271,12 +322,14 @@
       </property>
       <property name="font">
        <font>
+        <family>IRANYekanX Bold</family>
         <pointsize>20</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>Stop</string>
+       <string>توقف</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_reset_stopwatch">
@@ -290,27 +343,30 @@
       </property>
       <property name="font">
        <font>
+        <family>IRANYekanX Bold</family>
         <pointsize>20</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>Reset</string>
+       <string>شروع مجدد</string>
       </property>
      </widget>
      <widget class="QLabel" name="lbl_stopwatch">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>170</x>
         <y>80</y>
-        <width>121</width>
-        <height>41</height>
+        <width>251</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Seven Segment</family>
         <pointsize>40</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -324,7 +380,7 @@
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
-      <string>Timer</string>
+      <string>تایمر</string>
      </attribute>
      <widget class="QPushButton" name="btn_reset_timer">
       <property name="geometry">
@@ -337,12 +393,14 @@
       </property>
       <property name="font">
        <font>
+        <family>IRANYekanX Bold</family>
         <pointsize>20</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>Reset</string>
+       <string>شروع مجدد</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_start_timer">
@@ -356,12 +414,14 @@
       </property>
       <property name="font">
        <font>
+        <family>IRANYekanX Bold</family>
         <pointsize>20</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
-       <string>Start</string>
+       <string>شروع</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_stop_timer">
@@ -375,7 +435,9 @@
       </property>
       <property name="font">
        <font>
+        <family>IRANYekanX Bold</family>
         <pointsize>20</pointsize>
+        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -383,7 +445,7 @@
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>Stop</string>
+       <string>توقف</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="tb_minute_timer">
@@ -397,8 +459,10 @@
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>40</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -424,8 +488,10 @@ border-bottom:2px solid black;</string>
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>40</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -451,8 +517,10 @@ border-bottom:2px solid black;</string>
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>40</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -478,8 +546,10 @@ border-bottom:2px solid black;</string>
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>40</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -507,8 +577,10 @@ background-color: rgb(240, 240, 240);</string>
       </property>
       <property name="font">
        <font>
-        <family>Seven Segment</family>
+        <family>IRANYekanX Bold</family>
         <pointsize>40</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
