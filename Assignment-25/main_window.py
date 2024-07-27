@@ -15,10 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
+from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QLineEdit,
     QMainWindow, QPushButton, QSizePolicy, QTabWidget,
     QWidget)
-import flags_rc
+import flag_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -98,20 +98,16 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
-        self.horizontalLayoutWidget = QWidget(self.tab_2)
-        self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
-        self.horizontalLayoutWidget.setGeometry(QRect(0, 300, 591, 58))
-        self.horizontalLayout = QHBoxLayout(self.horizontalLayoutWidget)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.add_alarm = QPushButton(self.horizontalLayoutWidget)
-        self.add_alarm.setObjectName(u"add_alarm")
-        font4 = QFont()
-        font4.setPointSize(22)
-        self.add_alarm.setFont(font4)
-
-        self.horizontalLayout.addWidget(self.add_alarm)
-
+        self.gridLayoutWidget = QWidget(self.tab_2)
+        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
+        self.gridLayoutWidget.setGeometry(QRect(0, 0, 591, 281))
+        self.alarm_box = QGridLayout(self.gridLayoutWidget)
+        self.alarm_box.setObjectName(u"alarm_box")
+        self.alarm_box.setContentsMargins(0, 0, 0, 0)
+        self.label_4 = QLabel(self.tab_2)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(230, 290, 111, 61))
+        self.label_4.setStyleSheet(u"image: url(:/icon/image/plus.png);")
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
@@ -130,11 +126,11 @@ class Ui_MainWindow(object):
         self.lbl_stopwatch = QLabel(self.tab_3)
         self.lbl_stopwatch.setObjectName(u"lbl_stopwatch")
         self.lbl_stopwatch.setGeometry(QRect(170, 80, 251, 51))
-        font5 = QFont()
-        font5.setFamilies([u"Seven Segment"])
-        font5.setPointSize(40)
-        font5.setBold(True)
-        self.lbl_stopwatch.setFont(font5)
+        font4 = QFont()
+        font4.setFamilies([u"Seven Segment"])
+        font4.setPointSize(40)
+        font4.setBold(True)
+        self.lbl_stopwatch.setFont(font4)
         self.lbl_stopwatch.setAlignment(Qt.AlignCenter)
         self.tabWidget.addTab(self.tab_3, "")
         self.tab_4 = QWidget()
@@ -155,11 +151,11 @@ class Ui_MainWindow(object):
         self.tb_minute_timer = QLineEdit(self.tab_4)
         self.tb_minute_timer.setObjectName(u"tb_minute_timer")
         self.tb_minute_timer.setGeometry(QRect(260, 90, 81, 71))
-        font6 = QFont()
-        font6.setFamilies([u"IRANYekanX Bold"])
-        font6.setPointSize(40)
-        font6.setBold(True)
-        self.tb_minute_timer.setFont(font6)
+        font5 = QFont()
+        font5.setFamilies([u"IRANYekanX Bold"])
+        font5.setPointSize(40)
+        font5.setBold(True)
+        self.tb_minute_timer.setFont(font5)
         self.tb_minute_timer.setStyleSheet(u"border:none;\n"
 "background-color: rgb(240, 240, 240);\n"
 "border-bottom:2px solid black;")
@@ -167,7 +163,7 @@ class Ui_MainWindow(object):
         self.tb_second_timer = QLineEdit(self.tab_4)
         self.tb_second_timer.setObjectName(u"tb_second_timer")
         self.tb_second_timer.setGeometry(QRect(360, 90, 81, 71))
-        self.tb_second_timer.setFont(font6)
+        self.tb_second_timer.setFont(font5)
         self.tb_second_timer.setStyleSheet(u"border:none;\n"
 "background-color: rgb(240, 240, 240);\n"
 "border-bottom:2px solid black;")
@@ -175,7 +171,7 @@ class Ui_MainWindow(object):
         self.tb_hour_timer = QLineEdit(self.tab_4)
         self.tb_hour_timer.setObjectName(u"tb_hour_timer")
         self.tb_hour_timer.setGeometry(QRect(160, 90, 81, 71))
-        self.tb_hour_timer.setFont(font6)
+        self.tb_hour_timer.setFont(font5)
         self.tb_hour_timer.setStyleSheet(u"border:none;\n"
 "background-color: rgb(240, 240, 240);\n"
 "border-bottom:2px solid black;")
@@ -183,7 +179,7 @@ class Ui_MainWindow(object):
         self.tb_hour_timer_2 = QLineEdit(self.tab_4)
         self.tb_hour_timer_2.setObjectName(u"tb_hour_timer_2")
         self.tb_hour_timer_2.setGeometry(QRect(230, 90, 31, 71))
-        self.tb_hour_timer_2.setFont(font6)
+        self.tb_hour_timer_2.setFont(font5)
         self.tb_hour_timer_2.setStyleSheet(u"border:none;\n"
 "background-color: rgb(240, 240, 240);")
         self.tb_hour_timer_2.setAlignment(Qt.AlignCenter)
@@ -191,7 +187,7 @@ class Ui_MainWindow(object):
         self.tb_hour_timer_3 = QLineEdit(self.tab_4)
         self.tb_hour_timer_3.setObjectName(u"tb_hour_timer_3")
         self.tb_hour_timer_3.setGeometry(QRect(340, 90, 31, 71))
-        self.tb_hour_timer_3.setFont(font6)
+        self.tb_hour_timer_3.setFont(font5)
         self.tb_hour_timer_3.setStyleSheet(u"border:none;\n"
 "background-color: rgb(240, 240, 240);")
         self.tb_hour_timer_3.setAlignment(Qt.AlignCenter)
@@ -219,7 +215,7 @@ class Ui_MainWindow(object):
         self.de_timezone.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.us_timezone.setText(QCoreApplication.translate("MainWindow", u"0", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"\u0633\u0627\u0639\u062a \u062c\u0647\u0627\u0646\u06cc", None))
-        self.add_alarm.setText(QCoreApplication.translate("MainWindow", u"+", None))
+        self.label_4.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"\u0647\u0634\u062f\u0627\u0631", None))
         self.btn_start_stopwatch.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0631\u0648\u0639", None))
         self.btn_stop_stopwatch.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0648\u0642\u0641", None))

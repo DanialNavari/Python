@@ -8,3 +8,4 @@ class UI(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.lbl_stopwatch.setText("0:0:0")
+        self.alarm_box = self.ui.alarm_box

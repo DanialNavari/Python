@@ -131,5 +131,15 @@ global_country_time.start()
 
 
 ##########################  End of Global Time ##########################
+
+##########################  Start of Alarm ##########################
+win_alarm = Winalarm(window)
+win_alarm.show_alarm()
+
+# win_alarm.signal_alarm.connect()
+
+##########################  End of Alarm ##########################
+
+
 # Application execute
 app.exec()

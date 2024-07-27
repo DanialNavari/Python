@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'main_window.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.0
+## Created by: Qt User Interface Compiler version 6.7.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -36,7 +36,7 @@ class Ui_MainWindow(object):
         self.add_new_task_btn = QPushButton(self.centralwidget)
         self.add_new_task_btn.setObjectName(u"add_new_task_btn")
         self.add_new_task_btn.setGeometry(QRect(360, 420, 81, 61))
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.add_new_task_btn.sizePolicy().hasHeightForWidth())
@@ -48,7 +48,7 @@ class Ui_MainWindow(object):
         font1.setPointSize(20)
         font1.setBold(True)
         self.add_new_task_btn.setFont(font1)
-        self.add_new_task_btn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.add_new_task_btn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.add_new_task_btn.setStyleSheet(u"border:none;\n"
 "image: url(:/btn/plus.png);\n"
 "")
