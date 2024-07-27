@@ -9,7 +9,7 @@
 ## Global Time
 
 > [!NOTE]
-> Show official clock of ** IRAN ** , ** GERMANY ** & ** US ** with their time zones calculate by UTC.
+> Show official clock of **IRAN** , **GERMANY** & **US** with their time zones calculate by UTC.
 ```
     self.local_time = datetime.datetime.now(datetime.timezone.utc)
     self.fmt = "%H:%M:%S"
