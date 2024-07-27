@@ -10,6 +10,14 @@
 
 > [!NOTE]
 > Show official clock of IRAN , GERMANY & US with their time zones calculate by UTC.
+```
+    self.local_time = datetime.datetime.now(datetime.timezone.utc)
+    self.fmt = "%H:%M:%S"
+    self.zone = "%z"
+    self.ir = timezone("Asia/Tehran")
+    self.us = timezone("US/Eastern")
+    self.de = timezone("Europe/Berlin")
+```
 
 ### ![Global time](./image/global_time.jpg)
 
