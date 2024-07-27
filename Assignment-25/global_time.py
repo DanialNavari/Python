@@ -17,7 +17,7 @@ class GlobalTime(QThread):
             self.zone = "%z"
             self.ir = timezone("Asia/Tehran")
             self.us = timezone("US/Eastern")
-            self.de = timezone("Europe/Berlin")
+            self.de = timezone("Europe/Berlin") 
             iran_time = str(self.country_time(self.ir))  # str(self.ir_time)
             us_time = str(self.country_time(self.us))
             de_time = str(self.country_time(self.de))
