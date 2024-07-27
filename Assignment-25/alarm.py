@@ -60,4 +60,4 @@ class Winalarm(QThread):
         qq = msgbox.question(self, "", "آیا می خواهید این هشدار حذف شود؟")
         if qq == 16384:
             self.database.del_alarm(btn_name)
-            self.show_alarm()
+            self.show_alarm() 
