@@ -2,7 +2,7 @@
 
 ## Installation
 
-> [!NOTE]
+> [!IMPORTANT]
 > Use setup.exe in setup folder to easy install  
 
 
@@ -35,3 +35,5 @@
 
 ### ![Global time](./image/timer.jpg)
 
+> [!WARNING]
+> If you find any bug please send me : [danielnv0910@gmail.com](danielnv0910@gmail.com)
