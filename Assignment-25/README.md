@@ -31,7 +31,7 @@
 ## Timer
 
 > [!NOTE]
-> 
+> Use timer and see remain time and then show notification
 
-### ![Global time](./image/cornometer.jpg)
+### ![Global time](./image/timer.jpg)
 
