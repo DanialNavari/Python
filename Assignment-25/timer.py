@@ -12,7 +12,6 @@ class TimerThread(QThread):
         self.pos_loop = True
 
     def run(self):
-
         while True:
             self.pos_loop = self.time.minus()
             self.signal_show_timer.emit(self.time, self.pos_loop)
