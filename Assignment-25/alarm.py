@@ -7,5 +7,5 @@ class alarm(threading.Thread):
         super().__init__()
 
     def run(self):
-        ...
+        ... 
 

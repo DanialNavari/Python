@@ -306,7 +306,7 @@ def edit_alarm(win):
 
 
 init_settings(window.ui)
-read_from_db(window.ui)
+read_from_db(window.ui) 
 
 ##########################  End of Alarm ##########################
 
