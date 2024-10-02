@@ -8,22 +8,25 @@ import time
 
 class Alarm(QThread):
     signal_alarm = Signal(str, str, bool)
-    t1_h = "0"
-    t1_m = "0"
-    t2_h = "0"
-    t2_m = "0"
-    t1_active = ""
-    t2_active = ""
-    t3_h = "0"
-    t3_m = "0"
-    t3_active = ""
 
     def __init__(self, window):
         super().__init__()
         self.init_settings(window)
         # self.timer1 = AlarmClass(t1_h, t1_m)
-        self.timer2 = AlarmClass(self.t2_h, self.t2_m)
+        self.timer2 = AlarmClass(self.t2_h, self.t2_m, "timer2")
         # self.timer3 = AlarmClass(t3_h, t3_m)
+        self.t1_h = "0"
+        self.t1_m = "0"
+        self.t2_h = "0"
+        self.t2_m = "0"
+        self.t1_active = ""
+        self.t2_active = ""
+        self.t3_h = "0"
+        self.t3_m = "0"
+        self.t3_active = ""
+        self.check_value1 = ""
+        self.check_value2 = ""
+        self.check_value3 = ""
 
     def init_settings(self, win):
         self.read_from_db(win)
@@ -72,7 +75,6 @@ class Alarm(QThread):
         query = "SELECT * FROM alarm WHERE 1"
         result = self.cursor.execute(query)
         alarm_data = result.fetchall()
-        global t1_h, t1_m, t2_h, t2_m, t3_h, t3_m, t1_active, t2_active, t3_active
         win.alarm_text_1.setText(alarm_data[0][1])
         win.alarm_time_1.setText(str(alarm_data[0][2]) + ":" + str(alarm_data[0][3]))
         win.alarm_text_2.setText(alarm_data[1][1])
@@ -85,51 +87,51 @@ class Alarm(QThread):
             win.chk_active_1.setText("فعال")
             win.alarm_text_1.setStyleSheet("color:blue")
             win.alarm_time_1.setStyleSheet("color:blue")
-            t1_h = alarm_data[0][2]
-            t1_m = alarm_data[0][3]
-            t1_active = "ok"
+            self.t1_h = alarm_data[0][2]
+            self.t1_m = alarm_data[0][3]
+            self.check_value1 = "True"
         else:
             win.chk_active_1.setChecked(False)
             win.chk_active_1.setText("غیر فعال")
             win.alarm_text_1.setStyleSheet("color:black")
             win.alarm_time_1.setStyleSheet("color:black")
-            t1_h = ""
-            t1_m = ""
-            t1_active = "no"
+            self.t1_h = ""
+            self.t1_m = ""
+            self.check_value1 = "False"
 
         if alarm_data[1][4] == "1":
             win.chk_active_2.setChecked(True)
             win.chk_active_2.setText("فعال")
             win.alarm_text_2.setStyleSheet("color:blue")
             win.alarm_time_2.setStyleSheet("color:blue")
-            t2_h = alarm_data[1][2]
-            t2_m = alarm_data[1][3]
-            t2_active = "ok"
+            self.t2_h = alarm_data[1][2]
+            self.t2_m = alarm_data[1][3]
+            self.check_value2 = "True"
         else:
             win.chk_active_2.setChecked(False)
             win.chk_active_2.setText("غیر فعال")
             win.alarm_text_2.setStyleSheet("color:black")
             win.alarm_time_2.setStyleSheet("color:black")
-            t2_h = ""
-            t2_m = ""
-            t2_active = "no"
+            self.t2_h = ""
+            self.t2_m = ""
+            self.check_value2 = "False"
 
         if alarm_data[2][4] == "1":
             win.chk_active_3.setChecked(True)
             win.chk_active_3.setText("فعال")
             win.alarm_text_3.setStyleSheet("color:blue")
             win.alarm_time_3.setStyleSheet("color:blue")
-            t3_h = alarm_data[2][2]
-            t3_m = alarm_data[2][3]
-            t3_active = "ok"
+            self.t3_h = alarm_data[2][2]
+            self.t3_m = alarm_data[2][3]
+            self.check_value3 = "True"
         else:
             win.chk_active_3.setChecked(False)
             win.chk_active_3.setText("غیر فعال")
             win.alarm_text_3.setStyleSheet("color:black")
             win.alarm_time_3.setStyleSheet("color:black")
-            t3_h = ""
-            t3_m = ""
-            t3_active = "no"
+            self.t3_h = ""
+            self.t3_m = ""
+            self.check_value3 = "False"
 
     def update_active(self, btn, id, alarm_text, alarm_time):
         pos = btn.isChecked()
@@ -147,6 +149,28 @@ class Alarm(QThread):
         query = "UPDATE `alarm` SET `active` = " + active + " WHERE `id` = " + id
         self.cursor.execute(query)
         self.con.commit()
+        
+        match id:
+            case 1:
+                if active == "1":
+                    self.check_value1 = "True"
+                    self.run()
+                else:
+                    self.check_value1 = "False"
+            case 2:
+                if active == "1":
+                    self.check_value2 = "True"
+                    self.run()
+                else:
+                    self.check_value2 = "False"
+            case 3:
+                if active == "1":
+                    self.check_value3 = "True"
+                    self.run()
+                else:
+                    self.check_value3 = "False"
+                
+            
 
     def call_time(self, win, id):
         global cach
@@ -207,11 +231,15 @@ class Alarm(QThread):
 
     def run(self):
         while True:
-            check_value2 = self.timer2.check_alarm()
-            self.signal_alarm.emit(t2_h, t2_m, check_value2)
-            if check_value2 == "False":
+            if self.check_value2 == "False":
                 break
+            else:
+                self.check_value2 = self.timer2.check_alarm()
+                self.signal_alarm.emit(self.t2_h, self.t2_m, self.check_value2)
             time.sleep(1)
+
+    def stop(self):
+        self.check_value2 = "False"
 
         # while True:
         #     if len(t3_h) > 0 and len(t3_m) > 0 and t3_active == "ok":
