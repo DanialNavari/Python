@@ -19,7 +19,7 @@ for i in range(0, 8):
             color = 255
 ```
 
-
+<br>
 > [!NOTE]
 > Black_tape.py : placing a black tape on the left side of the profile picture
 ### ![Global time](./images/black_tape.jpg)
@@ -34,6 +34,7 @@ for i in range(70):
         black_tap_length -= 1
 ```
 
+<br>
 > [!NOTE]
 > Gradient.py : create a color gradient from white to black with the cv2 library
 ### ![Global time](./images/gradient_image.jpg)
@@ -42,6 +43,7 @@ for i in range(255):
     bg_cvt[i : i + 1, 0:255] = abs(i - 255)
 ```
 
+<br>
 > [!NOTE]
 > Invert_color.py : invert the white and black colors of the image
 ### ![Global time](./images/invert_pic.jpg)
@@ -51,12 +53,30 @@ image1_neg = cv2.bitwise_not(image1_cvt)
 image2_neg = cv2.bitwise_not(image2_cvt)
 ```
 
+<br>
 > [!NOTE]
 > Name.py : writing the first letter of the first name with the Cv2 library
 ### ![Global time](./images/name.jpg)
+```
+bg_cvt[100:200, 100:110] = 0
+bg_cvt[100:110, 110:140] = 0
+bg_cvt[110:120, 140:150] = 0
+bg_cvt[120:130, 150:160] = 0
+bg_cvt[130:140, 160:170] = 0
+bg_cvt[140:150, 170:180] = 0
+bg_cvt[150:160, 170:180] = 0
+bg_cvt[160:170, 160:170] = 0
+bg_cvt[170:180, 150:160] = 0
+bg_cvt[180:190, 140:150] = 0
+bg_cvt[190:200, 100:140] = 0
+```
 
+<br>
 > [!NOTE]
 > Rotate.py : rotate image 180 degrees with cv2 library
 ### ![Global time](./images/rotate_pic.jpg)
-
+```
+image3 = cv2.imread("images/3.jpg")
+image3_rotate = cv2.rotate(image3, cv2.ROTATE_180)
+```
 
