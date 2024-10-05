@@ -17,8 +17,8 @@
 
 > [!NOTE]
 > Invert_color.py : invert the white and black colors of the image
-### ![Global time](./images/1_cvt.jpg)
-### ![Global time](./images/2_cvt.jpg)
+### ![Global time](./images/invert_pic.jpg)
+### ![Global time](./images/invert_pic1.jpg)
 
 > [!NOTE]
 > Name.py : writing the first letter of the first name with the Cv2 library
@@ -26,6 +26,6 @@
 
 > [!NOTE]
 > Rotate.py : rotate image 180 degrees with cv2 library
-### ![Global time](./images/3_rotate.jpg)
+### ![Global time](./images/rotate_pic.jpg)
 
 
