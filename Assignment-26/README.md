@@ -2,7 +2,7 @@
 
 ## Introduction
 
-> [!IMPORTANT]
+> [!NOTIC]
 > Chess_board.py : make chess board with cv2 library  
 ### ![Global time](./images/result.jpg)
 
