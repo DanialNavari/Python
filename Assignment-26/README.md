@@ -5,6 +5,18 @@
 
 > [!NOTE]
 > Chess_board.py : make chess board with cv2 library  
+```
+for i in range(0, 8):
+    for j in range(0, 8):
+        if i % 2 == 0 and j % 2 != 0:
+            color = 0
+
+        elif i % 2 != 0 and j % 2 == 0:
+            color = 0
+
+        else:
+            color = 255
+```
 ### ![Global time](./images/result.jpg)
 
 > [!NOTE]
