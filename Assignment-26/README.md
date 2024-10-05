@@ -3,7 +3,8 @@
 > [!TIP]
 > This tutorial is about getting started with the cv2 image processing library in Python
 
-> ## Chess_board.py : make chess board with cv2 library  
+## Chess_board.py : 
+> make chess board with cv2 library  
 ### ![Global time](./images/result.jpg)
 ```
 for i in range(0, 8):
@@ -19,8 +20,8 @@ for i in range(0, 8):
 ```
 
 
-> [!NOTE]
-> Black_tape.py : placing a black tape on the left side of the profile picture
+## Black_tape.py : 
+> placing a black tape on the left side of the profile picture
 ### ![Global time](./images/black_tape.jpg)
 ```
 for i in range(70):
@@ -34,8 +35,8 @@ for i in range(70):
 ```
 
 
-> [!NOTE]
-> Gradient.py : create a color gradient from white to black with the cv2 library
+## Gradient.py : 
+> create a color gradient from white to black with the cv2 library
 ### ![Global time](./images/gradient_image.jpg)
 ```
 for i in range(255):
@@ -43,8 +44,8 @@ for i in range(255):
 ```
 
 
-> [!NOTE]
-> Invert_color.py : invert the white and black colors of the image
+## Invert_color.py : 
+> invert the white and black colors of the image
 ### ![Global time](./images/invert_pic.jpg)
 ### ![Global time](./images/invert_pic1.jpg)
 ```
@@ -53,8 +54,8 @@ image2_neg = cv2.bitwise_not(image2_cvt)
 ```
 
 
-> [!NOTE]
-> Name.py : writing the first letter of the first name with the Cv2 library
+## Name.py : 
+> writing the first letter of the first name with the Cv2 library
 ### ![Global time](./images/name.jpg)
 ```
 bg_cvt[100:200, 100:110] = 0
@@ -71,8 +72,8 @@ bg_cvt[190:200, 100:140] = 0
 ```
 
 
-> [!NOTE]
-> Rotate.py : rotate image 180 degrees with cv2 library
+## Rotate.py : 
+> rotate image 180 degrees with cv2 library
 ### ![Global time](./images/rotate_pic.jpg)
 ```
 image3 = cv2.imread("images/3.jpg")
