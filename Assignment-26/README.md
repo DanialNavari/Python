@@ -1,11 +1,9 @@
 # Assignment-26
 
-## Introduction
 > [!TIP]
 > This tutorial is about getting started with the cv2 image processing library in Python
 
-> [!NOTE]
-> Chess_board.py : make chess board with cv2 library  
+> ## Chess_board.py : make chess board with cv2 library  
 ### ![Global time](./images/result.jpg)
 ```
 for i in range(0, 8):
