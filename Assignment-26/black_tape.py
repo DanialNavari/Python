@@ -15,4 +15,4 @@ for i in range(70):
         profile_cvt[i : i + 1, 0:black_tap_length] = 0
         black_tap_length -= 1
 
-    cv2.imwrite("images/black_tap.jpg", profile_cvt)
+    cv2.imwrite("images/black_tape.jpg", profile_cvt)

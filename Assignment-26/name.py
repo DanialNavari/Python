@@ -14,4 +14,4 @@ bg_cvt[160:170, 160:170] = 0
 bg_cvt[170:180, 150:160] = 0
 bg_cvt[180:190, 140:150] = 0
 bg_cvt[190:200, 100:140] = 0
-cv2.imwrite("name.jpg", bg_cvt)
+cv2.imwrite("images/name.jpg", bg_cvt)
