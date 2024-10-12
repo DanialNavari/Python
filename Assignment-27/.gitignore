@@ -1,3 +1,6 @@
 # ignore ALL files in ANY directory named __pycache__
 __pycache__
 .venv
+test.py
+test2.py
+test3.py
