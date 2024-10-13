@@ -19,7 +19,7 @@ White = RGB color > 150
 
 > Design a winter landscape with snowfall
 
-### ![Global time](./image/screen_snowfall.gif)
+### ![Global time](./image/snowfall.gif)
 
 
 ## Battman.py :
@@ -35,39 +35,3 @@ White = RGB color > 150
 
 ### ![Global time](./image/tv.gif)
 
-
-```
-image1_neg = cv2.bitwise_not(image1_cvt)
-image2_neg = cv2.bitwise_not(image2_cvt)
-```
-
-## Name.py :
-
-> writing the first letter of the first name with the Cv2 library
-
-### ![Global time](./images/name.jpg)
-
-```
-bg_cvt[100:200, 100:110] = 0
-bg_cvt[100:110, 110:140] = 0
-bg_cvt[110:120, 140:150] = 0
-bg_cvt[120:130, 150:160] = 0
-bg_cvt[130:140, 160:170] = 0
-bg_cvt[140:150, 170:180] = 0
-bg_cvt[150:160, 170:180] = 0
-bg_cvt[160:170, 160:170] = 0
-bg_cvt[170:180, 150:160] = 0
-bg_cvt[180:190, 140:150] = 0
-bg_cvt[190:200, 100:140] = 0
-```
-
-## Rotate.py :
-
-> rotate image 180 degrees with cv2 library
-
-### ![Global time](./images/rotate_pic.jpg)
-
-```
-image3 = cv2.imread("images/3.jpg")
-image3_rotate = cv2.rotate(image3, cv2.ROTATE_180)
-```
