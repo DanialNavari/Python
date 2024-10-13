@@ -5,7 +5,7 @@
 
 ## detector.py : 
 > color detector with cv2 library  
-### ![Global time](./image/screen_detector.PNG)
+### ![Global time](./image/screen_detector.png)
 ```
 for i in range(0, 8):
     for j in range(0, 8):
