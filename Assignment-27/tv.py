@@ -22,13 +22,11 @@ while True:
         cv2.imwrite("image/frame1.jpg", image)
     elif obj[5] % 3 == 0:
         cv2.imwrite("image/frame2.jpg", image)
-    elif obj[5] % 5 == 0:
-        cv2.imwrite("image/frame3.jpg", image)
     else:
-        cv2.imwrite("image/frame4.jpg", image)
+        cv2.imwrite("image/frame3.jpg", image)
 
     # press q and quit programm and save gif
-    if cv2.waitKey(25) & 0xFF == ord("q"):
+    if cv2.waitKey(1) & 0xFF == ord("q"):
         frames.append(Image.open("image/frame1.jpg"))
         frames.append(Image.open("image/frame2.jpg"))
         frames.append(Image.open("image/frame3.jpg"))
