@@ -5,7 +5,7 @@
 
 ## Detector.py :
 
-> Color detector with cv2 library
+> Design a color detector with cv2 library using webcam
 
 ### ![Global time](./image/screen_detector.png)
 
