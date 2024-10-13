@@ -29,7 +29,7 @@ while True:
         cv2.putText(frame, f"BLACK({cent_color_code})", (20, 30), cv2.FONT_HERSHEY_TRIPLEX, 1, 0, 2)
     elif (
         frame[(rect_col_start + rect_length), (rect_row_start + rect_length)] >= 100
-        and frame[(rect_col_start + rect_length), (rect_row_start + rect_length)] <= 140
+        and frame[(rect_col_start + rect_length), (rect_row_start + rect_length)] <= 150
     ):
         cv2.putText(frame, f"GREY({cent_color_code})", (20, 30), cv2.FONT_HERSHEY_TRIPLEX, 1, 0, 2)
     else:

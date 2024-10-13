@@ -3,60 +3,50 @@
 > [!TIP]
 > This tutorial is about image,color and video proccessing
 
-## detector.py : 
-> color detector with cv2 library  
+## Detector.py :
+
+> Color detector with cv2 library
+
 ### ![Global time](./image/screen_detector.png)
+
 ```
-for i in range(0, 8):
-    for j in range(0, 8):
-        if i % 2 == 0 and j % 2 != 0:
-            color = 0
-
-        elif i % 2 != 0 and j % 2 == 0:
-            color = 0
-
-        else:
-            color = 255
+Black = RGB color < 100
+Gray = RGB color >= 100 and <= 150
+White = RGB color > 150
 ```
 
+## Snowfall.py :
 
-## Black_tape.py : 
-> placing a black tape on the left side of the profile picture
-### ![Global time](./images/black_tape.jpg)
-```
-for i in range(70):
-    if start_width_black_tap >= 0:
-        end_black_tap = start_width_black_tap + black_tap_length
-        profile_cvt[i : i + 1, start_width_black_tap:end_black_tap] = 0
-        start_width_black_tap -= 1
-    else:
-        profile_cvt[i : i + 1, 0:black_tap_length] = 0
-        black_tap_length -= 1
-```
+> Design a winter landscape with snowfall
+
+### ![Global time](./image/screen_snowfall.gif)
 
 
-## Gradient.py : 
-> create a color gradient from white to black with the cv2 library
-### ![Global time](./images/gradient_image.jpg)
-```
-for i in range(255):
-    bg_cvt[i : i + 1, 0:255] = abs(i - 255)
-```
+## Battman.py :
+
+> Design a battman logo type
+
+### ![Global time](./image/screen_battman.png)
 
 
-## Invert_color.py : 
-> invert the white and black colors of the image
-### ![Global time](./images/invert_pic.jpg)
-### ![Global time](./images/invert_pic1.jpg)
+## TV.py :
+
+> Design a tv noise screen
+
+### ![Global time](./image/tv.gif)
+
+
 ```
 image1_neg = cv2.bitwise_not(image1_cvt)
 image2_neg = cv2.bitwise_not(image2_cvt)
 ```
 
+## Name.py :
 
-## Name.py : 
 > writing the first letter of the first name with the Cv2 library
+
 ### ![Global time](./images/name.jpg)
+
 ```
 bg_cvt[100:200, 100:110] = 0
 bg_cvt[100:110, 110:140] = 0
@@ -71,12 +61,13 @@ bg_cvt[180:190, 140:150] = 0
 bg_cvt[190:200, 100:140] = 0
 ```
 
+## Rotate.py :
 
-## Rotate.py : 
 > rotate image 180 degrees with cv2 library
+
 ### ![Global time](./images/rotate_pic.jpg)
+
 ```
 image3 = cv2.imread("images/3.jpg")
 image3_rotate = cv2.rotate(image3, cv2.ROTATE_180)
 ```
-
