@@ -2,7 +2,7 @@
 import cv2
 
 # Read football empty pitch
-football_pitch = cv2.imread("image/football.jpg")
+football_pitch = cv2.imread("draw_football_pitch/image/football.jpg")
 
 # Draw area of pitch and gates place
 cv2.rectangle(football_pitch, [20, 20], [592, 439], [255, 255, 255], 2)

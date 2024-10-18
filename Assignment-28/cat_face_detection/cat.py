@@ -2,7 +2,7 @@
 import cv2
 
 # Reading image and convert it's color mode to gray
-cat_image = cv2.imread("image/cats.jpg")
+cat_image = cv2.imread("cat_face_detection/image/cats.jpg")
 cat_image_gray = cv2.cvtColor(cat_image, cv2.COLOR_BGR2GRAY)
 
 # Create face detector
