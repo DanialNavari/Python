@@ -18,7 +18,7 @@ python main.py
 > ### Cat face detection
 
 ![output](cat_face_detection/output/cat.jpg)
->> Cascade Classifier for cat face detection
+> Cascade Classifier for cat face detection
 ```
 cat_face_detector = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalcatface.xml")
 ```
