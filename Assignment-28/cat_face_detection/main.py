@@ -2,7 +2,7 @@
 import cv2
 
 # Reading image and convert it's color mode to gray
-cat_image = cv2.imread("cat_face_detection/image/cats.jpg")
+cat_image = cv2.imread("cat_face_detection/input/cats.jpg")
 cat_image_gray = cv2.cvtColor(cat_image, cv2.COLOR_BGR2GRAY)
 
 # Create face detector
@@ -24,4 +24,5 @@ cv2.putText(cat_image, f"Count: {cat_count}", [20, 40], cv2.FONT_HERSHEY_TRIPLEX
 
 # Show image
 cv2.imshow("", cat_image)
-cv2.waitKey()
+if cv2.waitKey() & 0xFF == ord("q"):
+    cv2.imwrite("cat_face_detection/output/cat.jpg", cat_image)
