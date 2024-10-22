@@ -8,7 +8,7 @@ pip install -r requirements.txt
 ```
 
 ## How to run
-> [!IMPORTANT]
+> [!NOTE]
 
 Inside each folder execute this command in terminal 
 ```
