@@ -19,8 +19,9 @@ mask_ = 255 - mask_
 
 # set home appliance on converted mask
 result += mask_ / 255 * home_
-
+# change result type
 result = result.astype("uint8")
 
 # save image
 cv2.imwrite("Virtual_Decorate/output/result.jpg", result)
+ 
