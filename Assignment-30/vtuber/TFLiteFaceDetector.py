@@ -1,7 +1,7 @@
 from functools import partial
 import cv2
-import numpy as np
 import tensorflow as tf
+import numpy as np
 
 
 class UltraLightFaceDetecion:
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     import sys
     import time
 
-    fd = UltraLightFaceDetecion("weights/RFB-320.tflite",conf_threshold=0.88)
+    fd = UltraLightFaceDetecion("weights/RFB-320.tflite", conf_threshold=0.88)
 
     cap = cv2.VideoCapture(0)
     color = (125, 255, 125)
