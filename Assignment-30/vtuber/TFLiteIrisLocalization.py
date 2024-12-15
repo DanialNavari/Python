@@ -137,10 +137,9 @@ if __name__ == "__main__":
     from TFLiteFaceDetector import UltraLightFaceDetecion
 
     gpu_ctx = -1
-    video = sys.argv[1]
     YAW_THD = 45
 
-    cap = cv2.VideoCapture(video)
+    cap = cv2.VideoCapture(0)
 
     fd = UltraLightFaceDetecion("weights/RFB-320.tflite",
                                 conf_threshold=0.9)
@@ -199,7 +198,7 @@ if __name__ == "__main__":
         # cv2.imwrite(f'./asset/orign_dress/img{counter:0>3}.png', frame)
 
         counter += 1
-        if cv2.waitKey(0) == ord('q'):
+        if cv2.waitKey(1) == ord('q'):
             break
 
     cap.release()
